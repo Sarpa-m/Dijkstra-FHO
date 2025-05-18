@@ -101,7 +101,7 @@ class App:
         grafo={} ; dist=np.loadtxt("distancias.txt"); lin=np.loadtxt("linhas.txt")
         with open("estacoes.txt","r") as f:
             for ln in f:
-                est,con=ln.strip().split('-'); viz=con.split(',') if con else []
+                est,con=ln.strip().split('-'); viz=con.split(' ') if con else []
                 grafo[int(est)] = [int(v) for v in viz if v]
         # carrega nomes
         self.station_names={}
